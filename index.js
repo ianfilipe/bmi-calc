@@ -3,6 +3,9 @@ const weightElement = document.querySelector('#weight')
 const heightElement = document.querySelector('#height')
 const calcElement = document.querySelector('#calc')
 const resultElement = document.querySelector('#result')
+let name = ""
+let weight = 0
+let height = 0
 
 nameElement.addEventListener('input', () => { 
     name = nameElement.value
@@ -15,7 +18,7 @@ heightElement.addEventListener('input', () => {
 })
 
 calcElement.addEventListener('click', () => {
-    let result = weight / (height * height)
+    let result = weight / height ** 2
     if (result > 30) {
         resultElement.value=`${name}, you're overweight.`
     } else {
